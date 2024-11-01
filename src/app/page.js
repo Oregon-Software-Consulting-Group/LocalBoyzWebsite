@@ -1,9 +1,14 @@
 import Image from "next/image";
 import HelloPage from "./hello/HelloPage"; // Adjust the path if needed
+import NavBar from "./navbar/NavBar";
 
 export default function Home() {
   return (
-    <HelloPage/>
+    <div>
+      <NavBar/>
+      <HelloPage/>
+
+    </div>
     
   );
 }
