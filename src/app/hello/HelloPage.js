@@ -33,33 +33,6 @@ export default function HelloPage() {
         <h1 style={{fontSize: '100px', fontFamily: 'papyrus, charcoal, fantasy', fontWeight:'bold'}}>LOCAL BOYZ</h1>
         <h2 style={{fontSize: '80px', fontFamily: 'papyrus, charcoal, fantasy', fontWeight:'bold'}}> Hawaiian Cafe</h2>
     </div>
-
-    <div style={{
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '20vh',
-      backgroundColor: 'rgb(0, 0, 0)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      padding: '20px'
-    }}>
-      <a href="https://www.localboyzhawaiiancafe.com/lbhc23-menu.pdf" target="_blank" style={{
-        display: 'inline-block',
-        fontSize:'50px',
-        fontFamily: 'papyrus, charcoal, fantasy',
-        fontWeight:'bold',
-        color: 'white',
-        textDecoration: 'none',
-        padding: '10px 20px',
-        borderRadius: '5px',
-        textAlign: 'center',
-        
-
-      }}>MENU</a>
-    </div>
   </div>
 
   );
