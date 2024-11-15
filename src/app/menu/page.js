@@ -1,6 +1,10 @@
+import NavBar from "../navbar/NavBar";
+
 export default function MenuPage() {
     return( 
         <div>
+            <NavBar/>  {/* Sidebar component added here */}
+            
             <div style={{
                 position: 'absolute',
                 top: 0,

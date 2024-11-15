@@ -1,18 +1,26 @@
-export default function page(){
-    return(
-        <div>
+import NavBar from "../navbar/NavBar";
 
-        <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        backgroundImage: 'url(https://www.hawaiistar.com/wp-content/uploads/2023/08/hawaiian-word-for-food.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        zIndex: -1
-        }}></div>
+import React from "react";
+
+export default function InfoPage() {
+    return (
+        <div>
+            <NavBar/>  {/* Sidebar component added here */}
+
+            <div
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: 'url(https://www.hawaiistar.com/wp-content/uploads/2023/08/hawaiian-word-for-food.webp)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    zIndex: -1
+                }}
+            />
+
             <h1 style={{
                 fontSize: '40px', 
                 fontFamily: 'freight-text-pro', 
@@ -34,7 +42,6 @@ export default function page(){
                 fontFamily: 'freight-text-pro',
                 color:'#ECD9BA',
                 textShadow: '2px 2px 4px #000000' 
-                     
             }}> 
                 1425 NW Monroe Ave, <br />
                 Corvallis, OR 97330
@@ -48,12 +55,11 @@ export default function page(){
                 fontWeight:'bold',
                 color: '#FFA07A',
                 textShadow: '2px 2px 4px #000000'
-
             }}>
                 Hours
             </h1>
 
-            <h2 style ={{
+            <h2 style={{
                 fontSize: '25px',
                 paddingLeft: '240px',
                 position: 'relative',
@@ -62,14 +68,14 @@ export default function page(){
                 color: '#ECD9BA',
                 textShadow: '2px 2px 4px #000000'
             }}>
-            Monday - 11:00 AM - 8:00 PM  <br />
-            Tuesday - 11:00 AM - 8:00 PM  <br />
-            Wednesday - 11:00 AM - 8:00 PM  <br />
-            Thursday - 11:00 AM - 8:00 PM  <br />
-            Friday - 11:00 AM - 8:00 PM  <br />
-           </h2>
+                Monday - 11:00 AM - 8:00 PM  <br />
+                Tuesday - 11:00 AM - 8:00 PM  <br />
+                Wednesday - 11:00 AM - 8:00 PM  <br />
+                Thursday - 11:00 AM - 8:00 PM  <br />
+                Friday - 11:00 AM - 8:00 PM  <br />
+            </h2>
 
-           <h1 style={{
+            <h1 style={{
                 fontSize: '40px',
                 paddingLeft: '240px',
                 position: 'relative',
@@ -77,10 +83,9 @@ export default function page(){
                 fontWeight:'bold', 
                 color: '#FFA07A',
                 textShadow: '2px 2px 4px #000000'
-
             }}>
                 Contacts
-                    <h2 style ={{
+                <h2 style={{
                     fontSize: '25px',
                     paddingLeft: '0px',
                     position: 'relative',
@@ -89,12 +94,9 @@ export default function page(){
                     color: '#ECD9BA',
                     fontWeight: 'normal',
                     textShadow: '2px 2px 4px #000000'
-                    
-                
-                    }}>
+                }}>
                     Phone - (541) 754-5338
-                    </h2>
-                
+                </h2>
             </h1>
 
             <div style={{
@@ -103,13 +105,11 @@ export default function page(){
                 left: 0,
                 width: '100%',
                 height: '100%',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the color and opacity as needed
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 zIndex: -1
-            }}></div>
-
+            }} />
         </div> 
     );
 }
-
 
 

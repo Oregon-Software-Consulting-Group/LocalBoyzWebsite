@@ -1,66 +1,85 @@
-// import React from "react";
-// import Link from "next/link";
+"use client";
 
-// export default function NavBar() {
-//     return (
-//         <nav style={{ backgroundColor: '#ECD9BA' }} className="p-4"> {/* Changed background color */}
-//             <div className="container mx-auto flex justify-between items-center">
-//                 <Link href="/" className="text-gray-800 text-lg font-semibold">
-//                     BrandName
-//                 </Link>
-//                 <div className="hidden md:flex space-x-6">
-//                     <Link href="#home" style={{ color: '#FFA07A', fontWeight:'bold', textShadow: '2px 2px 4px #000000' }}>
-//                         Home
-//                     </Link>
-//                     <Link href="./info" style={{ color: '#FFA07A' , fontWeight:'bold', textShadow: '2px 2px 4px #000000'}}>
-//                         About
-//                     </Link>
-//                     <Link href="./menu" style={{ color: '#FFA07A', fontWeight:'bold', textShadow: '2px 2px 4px #000000' }}>
-//                         Menu
-//                     </Link>
-//                     <Link href="#contact" style={{ color: '#FFA07A', fontWeight:'bold', textShadow: '2px 2px 4px #000000' }}>
-//                         Contact
-//                     </Link>
-//                 </div>
-//                 <div className="md:hidden">
-//                     <button style={{ color: '#FFA07A' }}>
-//                         ☰
-//                     </button>
-//                 </div>
-//             </div>
-//         </nav>
-//     );
-// }
-
-
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
-export default function NavBar() {
-    return (
-        <nav style={{ backgroundColor: 'black' }} className="p-4"> {/* Changed background color */}
-            <div className="container mx-auto flex justify-between items-center">
-                <Link href="/" className="text-[#FFA07A] text-lg font-semibold">
-                    Local Boyz Hawaiian Cafe
-                </Link>
+export default function Sidebar() {
+    const [isOpen, setIsOpen] = useState(false);
 
-                <div className="hidden md:flex space-x-6">
-                    <Link href="#home" style={{ color: '#FFA07A', fontWeight:'bold' }}>
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <>
+            {/* Sidebar Overlay */}
+            <div
+                onClick={toggleSidebar}
+                style={{
+                    display: isOpen ? 'block' : 'none',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    zIndex: 40,
+                }}
+            ></div>
+
+            {/* Sidebar */}
+            <nav
+                style={{
+                    transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+                    transition: 'transform 0.3s ease-in-out',
+                    backgroundColor: '#1a1a1a',
+                    width: '230px',
+                    height: '100vh',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    zIndex: 50,
+                    boxShadow: '2px 0 5px rgba(0, 0, 0, 0.5)',
+                    paddingTop: '60px', // Added padding to avoid overlap with the button
+                }}
+                className="p-6"
+            >
+                <div className="text-white text-2xl font-bold mb-8">
+                    Local Boyz Hawaiian Cafe
+                </div>
+                <div className="flex flex-col space-y-4">
+                    <Link href="./" className="text-white font-semibold hover:text-[#ff8b5f] transition-colors duration-200">
                         Home
                     </Link>
-                    <Link href="./info" style={{ color: '#FFA07A', fontWeight:'bold' }}>
+                    <Link href="./info" className="text-white font-semibold hover:text-[#ff8b5f] transition-colors duration-200">
                         About
                     </Link>
-                    <Link href="./menu" style={{ color: '#FFA07A', fontWeight:'bold' }}>
+                    <Link href="./menu" className="text-white font-semibold hover:text-[#ff8b5f] transition-colors duration-200">
                         Menu
                     </Link>
                 </div>
-                <div className="md:hidden">
-                    <button style={{ color: '#FFA07A' }}>
-                        ☰
-                    </button>
-                </div>
-            </div>
-        </nav>
+            </nav>
+
+            {/* Sidebar Toggle Button */}
+            <button
+                onClick={toggleSidebar}
+                style={{
+                    position: 'absolute',
+                    top: 20,
+                    left: 20,
+                    zIndex: 60,
+                    width: '30px',               // Set the width to match the image size
+                    height: '30px',              // Set the height to match the image size
+                    backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMJDgRCK4YvFCUL_lv_Z-Zzf9EH9OksC9v7A&s)',
+                    backgroundSize: 'cover',     // Make sure the image covers the entire button area
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    border: 'none',
+                    cursor: 'pointer',
+                    backgroundColor: 'transparent'
+                }}
+            >
+            </button>
+        </>
     );
 }
